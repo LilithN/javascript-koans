@@ -102,7 +102,7 @@ describe("1. About Arrays", function() {
   it("should write a function that returns an array of the first two elements of that array", function () {
     // be sure the function does not modify the original array
     var firstTwoElements = function(array) {
-      return FILL_ME_IN;
+      return [firstArray[0], firstArray[1]];
     };
     var firstArray = [1,2,3];
     var secondArray = [7,6,5];
