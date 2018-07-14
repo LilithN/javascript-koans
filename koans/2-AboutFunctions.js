@@ -61,13 +61,13 @@ describe("2. About Functions", function() {
       return firstArg;
     }
 
-    expect(returnFirstArg("first", "second", "third")).toBe("first", "second", "third");
+    expect(returnFirstArg("first", "second", "third")).toBe("first");
 
     function returnSecondArg(firstArg, secondArg) {
       return secondArg;
     }
 
-    expect(returnSecondArg("only give first arg")).toBe(firstArg);
+    expect(returnSecondArg("only give first arg")).toBe(undefined);
 
     function returnAllArgs() {
       var argsArray = [];
@@ -77,7 +77,7 @@ describe("2. About Functions", function() {
       return argsArray.join(",");
     }
 
-    expect(returnAllArgs("first", "second", "third")).toBe(FILL_ME_IN);
+    expect(returnAllArgs("first", "second", "third")).toBe('first,second,third');
   });
 
   it("should return undefined if no return value is specified", function () {
@@ -85,7 +85,7 @@ describe("2. About Functions", function() {
 
     }
 
-    expect(returnsUndefined()).toBe(FILL_ME_IN);
+    expect(returnsUndefined()).toBe(undefined);
   });
 
   it("should pass functions as values", function () {
@@ -99,10 +99,10 @@ describe("2. About Functions", function() {
     };
 
     var praiseSinger = { givePraise: appendRules };
-    expect(praiseSinger.givePraise("John")).toBe(FILL_ME_IN);
+    expect(praiseSinger.givePraise("John")).toBe("John rules!");
 
     praiseSinger.givePraise = appendDoubleRules;
-    expect(praiseSinger.givePraise("Mary")).toBe(FILL_ME_IN);
+    expect(praiseSinger.givePraise("Mary")).toBe("Mary totally rules!");
 
   });
 
@@ -114,8 +114,8 @@ describe("2. About Functions", function() {
       };
     };
 
-    expect(myFunc()()).toEqual(FILL_ME_IN);
-    expect( typeof myFunc() ).toEqual(FILL_ME_IN);
+    expect(myFunc()()).toEqual(1);
+    expect( typeof myFunc() ).toEqual('function');
   });
 
   it("can use functions and closures", function(){
@@ -128,8 +128,8 @@ describe("2. About Functions", function() {
     };
 
     var closure = myFunc();
-    expect(closure()).toEqual(FILL_ME_IN);
-    expect(closure()).toEqual(FILL_ME_IN);
+    expect(closure()).toEqual(1);
+    expect(closure()).toEqual(2);
   });
 
 });
