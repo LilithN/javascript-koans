@@ -47,13 +47,13 @@ describe("1. About Arrays", function() {
   it("should slice arrays", function () {
     var array = ["peanut", "butter", "and", "jelly"];
 
-    expect(array.slice(0, 1)).toEqual();
-    expect(array.slice(0, 2)).toEqual();
-    expect(array.slice(2, 2)).toEqual(FILL_ME_IN);
-    expect(array.slice(2, 20)).toEqual(FILL_ME_IN);
-    expect(array.slice(3, 0)).toEqual(FILL_ME_IN);
-    expect(array.slice(3, 100)).toEqual(FILL_ME_IN);
-    expect(array.slice(5, 1)).toEqual(FILL_ME_IN);
+    expect(array.slice(0, 1)).toEqual(['peanut']);
+    expect(array.slice(0, 2)).toEqual(['peanut', 'butter']);
+    expect(array.slice(2, 2)).toEqual([]);
+    expect(array.slice(2, 20)).toEqual(['and', 'jelly']);
+    expect(array.slice(3, 0)).toEqual([]);
+    expect(array.slice(3, 100)).toEqual(['jelly']);
+    expect(array.slice(5, 1)).toEqual([]);
   });
 
   // For more information: https://www.youtube.com/watch?v=YnfwDQ5XYF4
@@ -102,7 +102,7 @@ describe("1. About Arrays", function() {
   it("should write a function that returns an array of the first two elements of that array", function () {
     // be sure the function does not modify the original array
     var firstTwoElements = function(array) {
-      return [firstArray[0], firstArray[1]], FILL_ME_IN;
+      return FILL_ME_IN;
     };
     var firstArray = [1,2,3];
     var secondArray = [7,6,5];
