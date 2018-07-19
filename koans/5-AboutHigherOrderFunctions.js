@@ -4,9 +4,9 @@ describe("5. About Higher Order Functions", function () {
     var numbers = [1,2,3];
     var odd = numbers.filter(function (x) { return x % 2 !== 0 });
 
-    expect(odd).toEqual(FILL_ME_IN);
-    expect(odd.length).toBe(FILL_ME_IN);
-    expect(numbers.length).toBe(FILL_ME_IN);
+    expect(odd).toEqual([1,3]);
+    expect(odd.length).toBe(2);
+    expect(numbers.length).toBe(3);
   });
 
   it("should use 'map' to transform each element", function () {
@@ -101,10 +101,17 @@ describe("5. About Higher Order Functions", function () {
 
   it("can write your own filter function using a for loop", function() {
     var myFilter = function(arr, func){
+      var newArray = [];
       for(var i =0; i < arr.length; i++) {
         var arrayItem = arr[i];
-        return FILL_ME_IN;
+        if(func(arrayItem)){
+          newArray.push(arrayItem)
+        }
+        else {
+          console.log("it was false, not doing anything");
+        }
       }
+      return newArray;
     };
 
     expect(myFilter([1,2,3], (i) => i > 2)).toEqual([3]);
@@ -120,4 +127,3 @@ describe("5. About Higher Order Functions", function () {
     expect(myMap([1,2,3], (i) => i + 2)).toEqual([3,4,5]);
   });
 });
-
