@@ -116,7 +116,7 @@ describe("1. About Arrays", function() {
 
   it("should write a function that returns the 3rd element in an array (or null)", function () {
     var thirdElement = function(array) {
-      return ([array.length -1]);
+      return ;
     };
 
     expect(thirdElement([1,2,3])).toEqual(3);
