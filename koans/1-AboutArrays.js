@@ -102,7 +102,13 @@ describe("1. About Arrays", function() {
   it("should write a function that returns an array of the first two elements of that array", function () {
     // be sure the function does not modify the original array
     var firstTwoElements = function(array) {
-      return ([firstArray[0], [firstArray[1]]);
+      var firstArrayElements = [firstArray[0], firstArray[1]];
+      var secondArrayElements = [secondArray[0], secondArray[1]];
+
+      console.log(firstArrayElements);
+      console.log(secondArrayElements);
+
+      return firstArrayElements
     };
     var firstArray = [1,2,3];
     var secondArray = [7,6,5];
@@ -116,7 +122,8 @@ describe("1. About Arrays", function() {
 
   it("should write a function that returns the 3rd element in an array (or null)", function () {
     var thirdElement = function(array) {
-      return ;
+
+      return array[2] || null
     };
 
     expect(thirdElement([1,2,3])).toEqual(3);
@@ -129,6 +136,13 @@ describe("1. About Arrays", function() {
     //The elements of that array should be the first parameter
     //This could be done using a for loop or the fill array function
     var makeArray = function(element, length) {
+      var element = "hello";
+
+      for(var i=0; i<5; i++){
+        var newArray = [i, i];
+        console.log(newArray);
+      }
+
       return FILL_ME_IN;
     };
 
