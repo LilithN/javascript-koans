@@ -13,8 +13,8 @@ describe("5. About Higher Order Functions", function () {
     var numbers = [1, 2, 3];
     var numbersPlus1 = numbers.map(function(x) { return x + 1 });
 
-    expect(numbersPlus1).toEqual(FILL_ME_IN);
-    expect(numbers).toEqual(FILL_ME_IN);
+    expect(numbersPlus1).toEqual([2, 3, 4]);
+    expect(numbers).toEqual([1, 2, 3]);
   });
 
   it("should use 'forEach' for simple iteration", function () {
@@ -26,8 +26,8 @@ describe("5. About Higher Order Functions", function () {
 
     numbers.forEach(isEven);
 
-    expect(msg).toEqual(FILL_ME_IN);
-    expect(numbers).toEqual(FILL_ME_IN);
+    expect(msg).toEqual("falsetruefalse");
+    expect(numbers).toEqual([1, 2, 3]);
   });
 
   it("should use 'all' to test whether all items pass condition", function () {
@@ -36,8 +36,8 @@ describe("5. About Higher Order Functions", function () {
 
     var isEven = function(x) { return x % 2 === 0 };
 
-    expect(onlyEven.every(isEven)).toBe(FILL_ME_IN);
-    expect(mixedBag.every(isEven)).toBe(FILL_ME_IN);
+    expect(onlyEven.every(isEven)).toBe(true);
+    expect(mixedBag.every(isEven)).toBe(false);
   });
 
   it("should use 'any' to test if any items passes condition" , function () {
@@ -46,8 +46,8 @@ describe("5. About Higher Order Functions", function () {
 
     var isEven = function(x) { return x % 2 === 0 };
 
-    expect(onlyEven.some(isEven)).toBe(FILL_ME_IN);
-    expect(mixedBag.some(isEven)).toBe(FILL_ME_IN);
+    expect(onlyEven.some(isEven)).toBe(true);
+    expect(mixedBag.some(isEven)).toBe(true);
   });
 
   it("should write a function to filter out objects that match a criteria", function () {
