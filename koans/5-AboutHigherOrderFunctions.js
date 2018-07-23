@@ -64,7 +64,7 @@ describe("5. About Higher Order Functions", function () {
     // return a list of everyone's age
     var people = [{name: "bob", age: 41}, {name: "jane", age: 22},{name: "janet", age: 47},{name: "louis", age: 35}];
     var names = people.map(function(x) {
-      return FILL_ME_IN;
+      return x.age;
     });
 
     expect(names).toEqual([41, 22, 47, 35]);
@@ -97,7 +97,11 @@ describe("5. About Higher Order Functions", function () {
     // turn the array back into a string
 
     var jadenCase = function(string){
-      return FILL_ME_IN;
+      
+      return string
+      .split(" ")
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1) )
+      .join(" ");
     };
 
     expect(jadenCase("How can mirrors be real if our eyes aren't real")).toEqual("How Can Mirrors Be Real If Our Eyes Aren't Real");
